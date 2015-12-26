@@ -1,0 +1,114 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
+	<link rel="stylesheet" href="dist/css/style.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script>
+    angular
+    	.module('App', [])
+			.filter('font_size', function() {
+ 			return function(input, min, max) {
+		    min = parseInt(min); //Make string input int
+		    max = parseInt(max);
+		    for (var i=min; i<=max; i+=0.05)
+		      input.push(i.toFixed(2));
+		    return input;
+  		}})
+			.controller('Ctrl', function ($scope) {
+			  $scope.chinese_font = [{ 
+			  	    name: '新細明體', url: 'PMingLiU'}
+			    , { name: '微軟正黑體', url: 'Microsoft JhengHei'}
+			    , { name: '微軟雅黑體', url: 'Microsoft YaHei'}
+			    , { name: '標楷體', url: 'DFKai-SB'}];
+			  $scope.chinese = $scope.chinese_font[0];
+			  $scope.english_font = [{ 
+			  	    name: 'Arial', url: 'Arial'}
+			  	, { name: 'Helvetica', url: 'Helvetica'}
+			  	, { name: 'sans-serif', url: 'sans-serif'}
+			    , { name: 'serif', url: 'serif'}
+			    , { name: 'Times New Roman', url: 'Times New Roman'}
+			    , { name: 'monospace', url: 'monospace'}];
+			  $scope.english = $scope.english_font[0];
+			})
+			.filter('line_height', function() {
+ 			return function(input, min, max) {
+		    min = parseFloat(min); //Make string input int
+		    max = parseFloat(max);
+
+		    for (var i=min; i<=max; i+=0.1)
+		      input.push(i.toFixed(1));
+		    return input;
+  		}})
+  </script>
+</head>
+
+<body>
+	<header class="header">
+	<nav>
+		<ul>
+			<li>字體測試</li>
+		</ul>
+	</nav>
+	</header>
+	<section>
+  <div ng-controller="Ctrl">
+  <div class="setting column--white">
+	 	<div class="row">
+	  	<div class="col-lg-12">
+	  		<h3>設定</h3>
+	  	</div>
+	  	<div class="col-lg-12"><hr/></div>
+	    <div class="col-lg-6 col-xs-12">
+	    	<label for="font__size--em">Font-size (em):</label><br/>
+	    	<select id="font__size--em" ng-model="fontsize" ng-options="n for n in [] | font_size:1.0:10.0">
+	    		<option value="">Default: 1em</option>
+	    	</select>
+	    </div>
+	    <div class="col-lg-6 col-xs-12">
+	    	<label for="font__family--eng">Font-family (English):</label><br/>
+	     <select id="font__family--eng" ng-model="english" ng-options="t.name for t in english_font"></select>   
+	    </div>
+	    <div class="col-lg-6 col-xs-12">
+	    	<label for="font__family--chi">Font-family (中文):</label><br/>
+	     <select id="font__family--chi" ng-model="chinese" ng-options="t.name for t in chinese_font"></select>   
+	    </div>
+	    <div class="col-lg-6 col-xs-12">
+	    	<label for="line__height--em"> Line height (em):</label><br/>
+	    	<select id="line__height--em" ng-model="lineheight" ng-options="n for n in [] | line_height:1.0:2.0">
+	    		<option value="">Default: auto</option>
+	    	</select> 
+	    </div>
+	  </div>
+  </div>
+<div class="break-line-15"></div>
+<div class="column--white">
+<div class="row">
+<div class="col-lg-12">
+    <div ng-style={'font-size':(fontsize)+"em",'font-family':(english.url)+","+(chinese.url),"line-height":(lineheight)+"em"}>
+    <p><a href="http://evchk.wikia.com/wiki/%E6%AF%92%E7%94%B7%E7%9A%84%E4%B8%80%E7%94%9F">毒男的一生 - 香港網絡大典 - Wikia</a></p>
+    <p>升中四了，還未試過拍拖，但毒男說：「不緊要，依家努力讀書考好會考，第時有錢你荒（慌）無女？」</p>
+
+		<p>結果，毒男克服了一個又一個的考試，升上大學；影畢業相時，發覺好多人都一雙一對，原來大學係撮合情侶既好地方。毒男依然一個，但他說：「不緊要，即將係我踏入社會大展拳腳既時候，亦係我幸福生活既開始！」</p>
+
+		<p>毒男努力工作，三年，五年，七年過去了，依然單身。但他終於達成了心願，成為高收入人仕 － 月薪達二萬零五百蚊。</p>
+
+		<p>毒男年過三十，開始疑惑：「點解我已經係成功人仕，但仲係無女？」更令他驚訝的是，公司不少女同事都同MK型男拍拖結婚，但那些男人可不是事業型喎，例如，Dorothy既男朋友只係中五畢業既Sales，月薪只有一萬八千蚊，比自己足足少了二千多元！點解？唔係努力讀書成為有錢人就有女既咩？</p>
+
+		<p>不知不覺毒男到了中年，身邊已無什麼朋友，自己渡過一個又一個既聖誕節及情人節。</p>
+
+		<p>毒男年老了，孤零零一個坐在公園，回想一生：「自己曾得過什麼？女人的身體是怎麼樣的？和女朋友係海邊共渡平安夜既滋味係點架？高登人不是經常留帖話：『後生時唔好浪費時間，第時有錢你荒無女咩！』我照做了，究竟什麼地方出錯？」</p>
+
+		<hr/>
+		<p><a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS - Wikipedia, the free encyclopedia</a></p>
+    <p>HTTPS (also called HTTP over TLS,[1][2] HTTP over SSL,[3] and HTTP Secure[4][5]) is aprotocol for secure communication over acomputer network which is widely used on theInternet. HTTPS consists of communication over Hypertext Transfer Protocol (HTTP) within a connection encrypted by Transport Layer Security or its predecessor, Secure Sockets Layer. The main motivation for HTTPS is authentication of the visited websiteand to protect the privacy and integrity of the exchanged data.</p>
+
+		<p>In its popular deployment on the internet, HTTPS provides authentication of the website and associated web server with which one is communicating, which protects against man-in-the-middle attacks. Additionally, it provides bidirectional encryption of communications between a client and server, which protects against eavesdropping and tampering with and/or forging the contents of the communication.[6] In practice, this provides a reasonable guarantee that one is communicating with precisely the website that one intended to communicate with (as opposed to an impostor), as well as ensuring that the contents of communications between the user and site cannot be read or forged by any third party.</p>
+    </div>
+   </div>
+  </div>
+  </div>
+  </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "web-font-test",
+  "version": "1.0.0",
+  "description": "Testing font size, font family (Chinese & English) and line height.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollykannn/web-font-test.git"
+  },
+  "keywords": [
+    "Web-font-test"
+  ],
+  "author": "Molly Kan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mollykannn/web-font-test#readme"
+  },
+  "homepage": "https://github.com/mollykannn/web-font-test#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "browser-sync": "^2.9.11",
+    "css-loader": "^0.22.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.2",
+    "postcss-color-rgba-fallback": "^2.0.0"
+  }
+}
