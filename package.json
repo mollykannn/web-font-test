@@ -1,6 +1,6 @@
 {
   "name": "web-font-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Testing font size, font family (Chinese & English) and line height.",
   "main": "gulpfile.js",
   "scripts": {

@@ -1,23 +1,28 @@
 button,hr,img{border:0}
-blockquote,figure,h1,h2,h3,h4,header ul,ol,ul{padding:0;margin:0}
+.header--language,button{cursor:pointer}
 .col-lg-12,header{width:100%}
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0;font:16px/1 sans-serif;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+blockquote,figure,h1,h2,h3,h4,ol,ul{margin:0;padding:0}
 p{margin-top:0}
 li,main{display:block}
-.row:after,.row:before{content:" ";display:table}
 h1,h2,h3,h4{font-weight:100}
 strong{font-weight:700}
 a,button{-webkit-transition:.3s;transition:.3s}
-button{overflow:visible;font:inherit;-webkit-font-smoothing:inherit;letter-spacing:inherit;background:0 0;cursor:pointer}
+button{overflow:visible;font:inherit;-webkit-font-smoothing:inherit;letter-spacing:inherit;background:0 0}
 ::-moz-focus-inner{padding:0;border:0}
 :focus{outline:0}
 img{max-width:100%;height:auto}
-body{font-size:1em;font-family:Arial,"Microsoft JhengHei";background-color:#FFF}
+body{font-size:1em;font-family:Arial,"Microsoft JhengHei";background-color:#F9F9F9}
 *{box-sizing:border-box}
 hr{height:1px;background-color:#d4d4d4}
-header{z-index:99;position:fixed;padding:13px 0;background-color:#000;color:#FFF}
-header ul li{float:left;padding:0 15px}
+header{z-index:99;position:fixed;background-color:#000;color:#FFF}
+header ul li{float:left;padding:15px}
+header ul li:last-child{float:right;position:relative}
+.header--language ul{background-color:#000;display:none;position:absolute;left:0;top:45px}
+.header--language ul li{text-align:center;padding:15px;float:inherit}
+.header--language:focus ul,.header--language:hover ul{display:block}
+.row:after,.row:before{content:" ";display:table}
 section{padding-top:42px}
 select{margin-top:5px;padding:5px;border:1px solid #D0D0D0}
 .break-line-15{height:15px}
@@ -27,5 +32,7 @@ select{margin-top:5px;padding:5px;border:1px solid #D0D0D0}
 .col-lg-6{width:50%}
 @media (max-width:480px){.col-xs-12{width:100%}
 }
-.column--white{box-shadow:0 0 15px 2px rgba(0,0,0,.1);padding:20px 15px}
+.column--white{box-shadow:0 0 8px 2px rgba(0,0,0,.1);padding:20px 15px;background-color:#FFF}
 .setting .row>.col-xs-12{padding-top:10px}
+.content{height:calc(100vh - 310px)}
+footer{font-size:13px;text-align:center;padding-top:15px}
