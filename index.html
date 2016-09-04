@@ -1,144 +1,152 @@
 <!doctype html>
-<html ng-app="App">
+<html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
-	<title>字體測試</title>
-	<link rel="stylesheet" href="dist/css/style.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
+  <title>字體測試</title>
+  <link rel="stylesheet" href="dist/css/style.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-  <script>
-    angular
-    	.module('App', [])
-			.filter('font_size', function() {
- 			return function(input, min, max) {
-		    min = parseInt(min); //Make string input int
-		    max = parseInt(max);
-		    for (var i=min; i<=max; i+=0.05)
-		      input.push(i.toFixed(2));
-		    return input;
-  		}})
-			.controller('Ctrl', function ($scope) {
-			  $scope.chinese_font = [
-					{ name: '新細明體', url: 'PMingLiU'} ,
-			    { name: '微軟正黑體', url: 'Microsoft JhengHei'} ,
-			    { name: '微軟雅黑體', url: 'Microsoft YaHei'} ,
-			    { name: '標楷體', url: 'DFKai-SB'}];
-			  $scope.chinese = $scope.chinese_font[0];
-			  $scope.english_font = [
-					{ name: 'Arial', url: 'Arial'} ,
-					{ name: 'Calibri', url: 'Calibri'} ,
-					{ name: 'Comic Sans MS', url: 'Comic Sans MS'} ,
-					{ name: 'Courier New', url: 'Courier New'} ,
-					{ name: 'Georgia', url: 'Georgia'} ,
-			    { name: 'Times New Roman', url: 'Times New Roman'} ,
-					{ name: 'Verdana', url: 'Verdana'} ];
-			  $scope.english = $scope.english_font[0];
-				$scope.tabs = [{
-		      title: '中文',
-		      url: 'chinese.html'
-		    }, {
-		      title: '英文',
-		      url: 'english.html'
-		    }];
-				$scope.currentTab = 'chinese.html';
-				$scope.onClickTab = function (tab) {
-					$scope.currentTab = tab.url;
-				}
-				$scope.isActiveTab = function(tabUrl) {
-					return tabUrl == $scope.currentTab;
-				}
-			})
-			.filter('line_height', function() {
- 			return function(input, min, max) {
-		    min = parseFloat(min); //Make string input int
-		    max = parseFloat(max);
-		    for (var i=min; i<=max; i+=0.1)
-		      input.push(i.toFixed(1));
-		    return input;
-  		}})
-  </script>
+  <script src="app/app.module.js"></script>
+  <script src="app/controllers/font.js"></script>
+  <script src="app/filter/font-size.js"></script>
+  <script src="app/filter/line-height.js"></script>
 </head>
 
-<body ng-controller="Ctrl">
-	<header class="header">
-	<nav>
-		<ul>
-			<li>字體測試</li>
-			<li class="header--language">語言
-				<ul>
-					<li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-	</header>
-	<section>
-	  <div class="setting column--white">
-		 	<div class="row">
-		  	<div class="col-lg-12">
-		  		<h3>設定</h3>
-		  	</div>
-		  	<div class="col-lg-12"><hr/></div>
-		    <div class="col-lg-6 col-xs-12">
-		    	<label for="font__size--em">Font-size (em):</label><br/>
-		    	<select id="font__size--em" ng-model="fontsize" ng-options="n for n in [] | font_size:1.0:10.0">
-		    		<option value="">Default: 1em</option>
-		    	</select>
-		    </div>
-		    <div class="col-lg-6 col-xs-12">
-		    	<label for="font__family--eng">Font-family (English):</label><br/>
-		     <select id="font__family--eng" ng-model="english" ng-options="t.name for t in english_font"></select>
-		    </div>
-		    <div class="col-lg-6 col-xs-12">
-		    	<label for="font__family--chi">Font-family (中文):</label><br/>
-		     <select id="font__family--chi" ng-model="chinese" ng-options="t.name for t in chinese_font"></select>
-		    </div>
-		    <div class="col-lg-6 col-xs-12">
-		    	<label for="line__height--em"> Line height (em):</label><br/>
-		    	<select id="line__height--em" ng-model="lineheight" ng-options="n for n in [] | line_height:1.0:2.0">
-		    		<option value="">Default: auto</option>
-		    	</select>
-		    </div>
-		  </div>
-	  </div>
-		<div class="break-line-15"></div>
-		<div class="break-line-15"></div>
-		<div class="content column--white">
-			<div class="row">
-				<div class="col-lg-12">
-		    	<div ng-style={'font-size':(fontsize)+"em",'font-family':(english.url)+","+(chinese.url),"line-height":(lineheight)+"em"}>
-						<div ng-include="currentTab"></div>
-						<script type="text/ng-template" id="chinese.html">
+<body ng-app="app" ng-controller="Font as language">
+  <header class="header">
+  <nav>
+    <ul>
+      <li>字體測試</li>
+      <li class="header--language">語言
+        <ul>
+          <li ng-repeat="tab in language.tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="language.onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  </header>
+  <section class="content row">
+    <div class="col-sm-6" ng-controller="Font as font">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>設定</h3>
+          <hr/>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="font__size--em">Font-size (em):</label><br/>
+          <select id="font__size--em" ng-model="fontsize" ng-options="n for n in [] | font_size:1.0:10.0">
+            <option value="">Default: 1em</option>
+          </select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="font__family--eng">Font-family (English):</label><br/>
+         <select id="font__family--eng" ng-model="font.english" ng-options="t.name for t in font.english_font"></select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="font__family--chi">Font-family (中文):</label><br/>
+         <select id="font__family--chi" ng-model="font.chinese" ng-options="t.name for t in font.chinese_font"></select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="line__height--em"> Line height (em):</label><br/>
+          <select id="line__height--em" ng-model="lineheight" ng-options="n for n in [] | line_height:1.0:2.0">
+            <option value="">Default: auto</option>
+          </select>
+        </div>
+        <div class="col-xs-12">
+          <hr/>
+          <div ng-style={'font-size':(fontsize)+"em",'font-family':(font.english.url)+","+(font.chinese.url),"line-height":(lineheight)+"em"}>
+            <div ng-include="language.currentTab"></div>
+            <script type="text/ng-template" id="chinese.html">
 
-				    <p><a href="http://evchk.wikia.com/wiki/%E6%AF%92%E7%94%B7%E7%9A%84%E4%B8%80%E7%94%9F">毒男的一生 - 香港網絡大典 - Wikia</a></p>
-				    <p>升中四了，還未試過拍拖，但毒男說：「不緊要，依家努力讀書考好會考，第時有錢你荒（慌）無女？」</p>
+            <p><a href="http://evchk.wikia.com/wiki/%E6%AF%92%E7%94%B7%E7%9A%84%E4%B8%80%E7%94%9F">毒男的一生 - 香港網絡大典 - Wikia</a></p>
+            <p>升中四了，還未試過拍拖，但毒男說：「不緊要，依家努力讀書考好會考，第時有錢你荒（慌）無女？」</p>
 
-						<p>結果，毒男克服了一個又一個的考試，升上大學；影畢業相時，發覺好多人都一雙一對，原來大學係撮合情侶既好地方。毒男依然一個，但他說：「不緊要，即將係我踏入社會大展拳腳既時候，亦係我幸福生活既開始！」</p>
+            <p>結果，毒男克服了一個又一個的考試，升上大學，影畢業相時，發覺好多人都一雙一對，原來大學係撮合情侶既好地方。毒男依然一個，但他說：「不緊要，即將係我踏入社會大展拳腳既時候，亦係我幸福生活既開始！」</p>
 
-						<p>毒男努力工作，三年，五年，七年過去了，依然單身。但他終於達成了心願，成為高收入人仕 － 月薪達二萬零五百蚊。</p>
+            <p>毒男努力工作，三年，五年，七年過去了，依然單身。但他終於達成了心願，成為高收入人仕 － 月薪達二萬零五百蚊。</p>
 
-						<p>毒男年過三十，開始疑惑：「點解我已經係成功人仕，但仲係無女？」更令他驚訝的是，公司不少女同事都同MK型男拍拖結婚，但那些男人可不是事業型喎，例如，Dorothy既男朋友只係中五畢業既Sales，月薪只有一萬八千蚊，比自己足足少了二千多元！點解？唔係努力讀書成為有錢人就有女既咩？</p>
+            <p>毒男年過三十，開始疑惑：「點解我已經係成功人仕，但仲係無女？」更令他驚訝的是，公司不少女同事都同MK型男拍拖結婚，但那些男人可不是事業型喎，例如，Dorothy既男朋友只係中五畢業既Sales，月薪只有一萬八千蚊，比自己足足少了二千多元！點解？唔係努力讀書成為有錢人就有女既咩？</p>
 
-						<p>不知不覺毒男到了中年，身邊已無什麼朋友，自己渡過一個又一個既聖誕節及情人節。</p>
+            <p>不知不覺毒男到了中年，身邊已無什麼朋友，自己渡過一個又一個既聖誕節及情人節。</p>
 
-						<p>毒男年老了，孤零零一個坐在公園，回想一生：「自己曾得過什麼？女人的身體是怎麼樣的？和女朋友係海邊共渡平安夜既滋味係點架？高登人不是經常留帖話：『後生時唔好浪費時間，第時有錢你荒無女咩！』我照做了，究竟什麼地方出錯？」</p>
-						</script>
-						<script type="text/ng-template" id="english.html">
-						<p><a href="https://en.wikipedia.org/wiki/HTTPS">AngularJS - Wikipedia, the free encyclopedia</a></p>
-				    <p>AngularJS (commonly referred to as "Angular" or "Angular.js") is an open-source web application framework mainly maintained by Google and by a community of individual as well as group developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.</p>
+            <p>毒男年老了，孤零零一個坐在公園，回想一生：「自己曾得過什麼？女人的身體是怎麼樣的？和女朋友係海邊共渡平安夜既滋味係點架？高登人不是經常留帖話：『後生時唔好浪費時間，第時有錢你荒無女咩！』我照做了，究竟什麼地方出錯？」</p>
+            </script>
+            <script type="text/ng-template" id="english.html">
+            <p><a href="https://en.wikipedia.org/wiki/HTTPS">AngularJS - Wikipedia, the free encyclopedia</a></p>
+            <p>AngularJS (commonly referred to as "Angular" or "Angular.js") is an open-source web application framework mainly maintained by Google and by a community of individual as well as group developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.</p>
 
-						<p>The AngularJS library works by first reading the HTML page, which has embedded into it additional custom tag attributes. Angular interprets those attributes as directives to bind input or output parts of the page to a model that is represented by standard JavaScript variables. The values of those JavaScript variables can be manually set within the code, or retrieved from static or dynamic JSON resources.</p>
+            <p>The AngularJS library works by first reading the HTML page, which has embedded into it additional custom tag attributes. Angular interprets those attributes as directives to bind input or output parts of the page to a model that is represented by standard JavaScript variables. The values of those JavaScript variables can be manually set within the code, or retrieved from static or dynamic JSON resources.</p>
 
-						<p>According to JavaScript analytics service Libscore, AngularJS is used on the websites of NBC, Walgreens, Intel, Sprint, ABC News, and approximately 8,400 other sites out of 1 million tested in July 2015.[1]</p>
+            <p>According to JavaScript analytics service Libscore, AngularJS is used on the websites of NBC, Walgreens, Intel, Sprint, ABC News, and approximately 8,400 other sites out of 1 million tested in July 2015.[1]</p>
 
-						<p>AngularJS is the frontend part of the MEAN stack, together with Node.js runtime, Express.js backend framework and MongoDB database.</p>
-						</script>
-		    	</div>
-		   	</div>
-		  </div>
-		</div>
-		<footer>
-			Created by <a href="https://github.com/mollykannn">Molly Kan</a>
-		</footer>
-	</section>
+            <p>AngularJS is the frontend part of the MEAN stack, together with Node.js runtime, Express.js backend framework and MongoDB database.</p>
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 content__line"><hr/></div>
+    <div class="col-sm-6 content__right" ng-controller="Font as font">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>設定</h3>
+          <hr/>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="font__size--em">Font-size (em):</label><br/>
+          <select id="font__size--em" ng-model="fontsize" ng-options="n for n in [] | font_size:1.0:10.0">
+            <option value="">Default: 1em</option>
+          </select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="font__family--eng">Font-family (English):</label><br/>
+         <select id="font__family--eng" ng-model="font.english" ng-options="t.name for t in font.english_font"></select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="font__family--chi">Font-family (中文):</label><br/>
+         <select id="font__family--chi" ng-model="font.chinese" ng-options="t.name for t in font.chinese_font"></select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="line__height--em"> Line height (em):</label><br/>
+          <select id="line__height--em" ng-model="lineheight" ng-options="n for n in [] | line_height:1.0:2.0">
+            <option value="">Default: auto</option>
+          </select>
+        </div>
+        <div class="col-xs-12">
+          <hr/>
+          <div ng-style={'font-size':(fontsize)+"em",'font-family':(font.english.url)+","+(font.chinese.url),"line-height":(lineheight)+"em"}>
+            <div ng-include="language.currentTab"></div>
+            <script type="text/ng-template" id="chinese.html">
+
+            <p><a href="http://evchk.wikia.com/wiki/%E6%AF%92%E7%94%B7%E7%9A%84%E4%B8%80%E7%94%9F">毒男的一生 - 香港網絡大典 - Wikia</a></p>
+            <p>升中四了，還未試過拍拖，但毒男說：「不緊要，依家努力讀書考好會考，第時有錢你荒（慌）無女？」</p>
+
+            <p>結果，毒男克服了一個又一個的考試，升上大學，影畢業相時，發覺好多人都一雙一對，原來大學係撮合情侶既好地方。毒男依然一個，但他說：「不緊要，即將係我踏入社會大展拳腳既時候，亦係我幸福生活既開始！」</p>
+
+            <p>毒男努力工作，三年，五年，七年過去了，依然單身。但他終於達成了心願，成為高收入人仕 － 月薪達二萬零五百蚊。</p>
+
+            <p>毒男年過三十，開始疑惑：「點解我已經係成功人仕，但仲係無女？」更令他驚訝的是，公司不少女同事都同MK型男拍拖結婚，但那些男人可不是事業型喎，例如，Dorothy既男朋友只係中五畢業既Sales，月薪只有一萬八千蚊，比自己足足少了二千多元！點解？唔係努力讀書成為有錢人就有女既咩？</p>
+
+            <p>不知不覺毒男到了中年，身邊已無什麼朋友，自己渡過一個又一個既聖誕節及情人節。</p>
+
+            <p>毒男年老了，孤零零一個坐在公園，回想一生：「自己曾得過什麼？女人的身體是怎麼樣的？和女朋友係海邊共渡平安夜既滋味係點架？高登人不是經常留帖話：『後生時唔好浪費時間，第時有錢你荒無女咩！』我照做了，究竟什麼地方出錯？」</p>
+            </script>
+            <script type="text/ng-template" id="english.html">
+            <p><a href="https://en.wikipedia.org/wiki/HTTPS">AngularJS - Wikipedia, the free encyclopedia</a></p>
+            <p>AngularJS (commonly referred to as "Angular" or "Angular.js") is an open-source web application framework mainly maintained by Google and by a community of individual as well as group developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.</p>
+
+            <p>The AngularJS library works by first reading the HTML page, which has embedded into it additional custom tag attributes. Angular interprets those attributes as directives to bind input or output parts of the page to a model that is represented by standard JavaScript variables. The values of those JavaScript variables can be manually set within the code, or retrieved from static or dynamic JSON resources.</p>
+
+            <p>According to JavaScript analytics service Libscore, AngularJS is used on the websites of NBC, Walgreens, Intel, Sprint, ABC News, and approximately 8,400 other sites out of 1 million tested in July 2015.[1]</p>
+
+            <p>AngularJS is the frontend part of the MEAN stack, together with Node.js runtime, Express.js backend framework and MongoDB database.</p>
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    Created by <a href="https://github.com/mollykannn">Molly Kan</a>
+  </footer>
 </body>
 </html>
