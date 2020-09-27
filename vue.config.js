@@ -3,7 +3,9 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 module.exports = {
   productionSourceMap: false,
   runtimeCompiler: true,
-  assetsDir: 'static',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/web-font-test/'
+    : '/',
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
       return {
