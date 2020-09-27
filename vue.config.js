@@ -6,6 +6,14 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? '/web-font-test/'
     : '/',
+  chainWebpack: config => {
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = '字體測試'
+        return args
+      })
+  },
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
       return {
