@@ -4,21 +4,18 @@
 
 
 ## 安裝 (Install)
-
 ```shell
-npm install
+yarn install
 ```
 
 ## 使用方法 (Usage)
 
-運行 (Run)
-
+建立檔案 (Create files)
 ```shell
-gulp
+yarn run build
 ```
 
-刪除及建立 css & js file (Delete and build the css & js file)
-
+運行 (Run)
 ```shell
-gulp clean && gulp build
+yarn run serve
 ```
