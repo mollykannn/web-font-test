@@ -2,8 +2,8 @@
   <header class="header">
     <div class="header--title">字體測試</div>
     <div class="header--setting">
-      <label>Body Font-size：</label>
-      <select v-model="commonData.bodyFontSize" class="bodyFontSize">
+      <label for="body-font-size">Body Font-size：</label>
+      <select v-model="commonData.bodyFontSize" class="bodyFontSize" id="body-font-size">
         <option
           v-for="fontSize in fontPX"
           v-bind:key="fontSize.id"
@@ -12,8 +12,8 @@
           {{ fontSize }}
         </option>
       </select>
-      <label>語言：</label>
-      <select v-model="commonData.language" class="language">
+      <label for="language">語言：</label>
+      <select v-model="commonData.language" class="language" id="language">
         <option value="zh-tw">中文</option>
         <option value="us-en">英文</option>
       </select>
@@ -28,8 +28,8 @@
         <hr />
         <div class="fontColumn">
           <div class="fontSetting">
-            <label for="Font-size">Font-size:</label>
-            <select v-model="fontColumn1.fontSize">
+            <label for="font-size">Font-size:</label>
+            <select v-model="fontColumn1.fontSize" id="font-size">
               <option
                 v-for="fontSize in fontEM"
                 v-bind:key="fontSize.id"
@@ -40,8 +40,8 @@
             </select>
           </div>
           <div class="fontSetting">
-            <label for="Font-family Eng">Font-family (English):</label>
-            <select v-model="fontColumn1.fontFamilyEnglish">
+            <label for="font-family-eng">Font-family (English):</label>
+            <select v-model="fontColumn1.fontFamilyEnglish" id="font-family-eng">
               <option
                 v-for="details in fontFamilyEnglish"
                 v-bind:key="details.name"
@@ -52,8 +52,8 @@
             </select>
           </div>
           <div class="fontSetting">
-            <label for="line height"> Line height:</label>
-            <select v-model="fontColumn1.lineHeight">
+            <label for="line-height"> Line height:</label>
+            <select v-model="fontColumn1.lineHeight" id="line-height">
               <option
                 v-for="lineHeight in fontEM"
                 v-bind:key="lineHeight.id"
@@ -64,8 +64,8 @@
             </select>
           </div>
           <div class="fontSetting">
-            <label for="Font-family Chinese">Font-family (中文):</label>
-            <select v-model="fontColumn1.fontFamilyChinese">
+            <label for="font-family-chinese">Font-family (中文):</label>
+            <select v-model="fontColumn1.fontFamilyChinese" id="font-family-chinese">
               <option
                 v-for="details in fontFamilyChinese"
                 v-bind:key="details.name"
@@ -96,8 +96,8 @@
         <hr />
         <div class="fontColumn">
           <div class="fontSetting">
-            <label for="Font-size">Font-size:</label>
-            <select v-model="fontColumn2.fontSize">
+            <label for="font-size-2">Font-size:</label>
+            <select v-model="fontColumn2.fontSize" id="font-size-2">
               <option
                 v-for="fontSize in fontEM"
                 v-bind:key="fontSize.id"
@@ -108,8 +108,8 @@
             </select>
           </div>
           <div class="fontSetting">
-            <label for="Font-family Eng">Font-family (English):</label>
-            <select v-model="fontColumn2.fontFamilyEnglish">
+            <label for="font-family-eng-2">Font-family (English):</label>
+            <select v-model="fontColumn2.fontFamilyEnglish" id="font-family-eng-2">
               <option
                 v-for="details in fontFamilyEnglish"
                 v-bind:key="details.name"
@@ -120,8 +120,8 @@
             </select>
           </div>
           <div class="fontSetting">
-            <label for="line height"> Line height:</label>
-            <select v-model="fontColumn2.lineHeight">
+            <label for="line-height-2"> Line height:</label>
+            <select v-model="fontColumn2.lineHeight" id="line-height-2">
               <option
                 v-for="lineHeight in fontEM"
                 v-bind:key="lineHeight.id"
@@ -132,8 +132,8 @@
             </select>
           </div>
          <div class="fontSetting">
-            <label for="Font-family Chinese">Font-family (中文):</label>
-            <select v-model="fontColumn2.fontFamilyChinese">
+            <label for="font-family-chinese-2">Font-family (中文):</label>
+            <select v-model="fontColumn2.fontFamilyChinese" id="font-family-chinese-2">
               <option
                 v-for="details in fontFamilyChinese"
                 v-bind:key="details.name"
