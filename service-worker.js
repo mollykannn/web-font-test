@@ -1,4 +1,4 @@
-importScripts("/web-font-test/precache-manifest.02ca912157e7b4a8994356f1bc007086.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/web-font-test/precache-manifest.26f77b060c0457118d6640a79a3c8e38.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.routing.registerRoute(
   /.*\.css/,
