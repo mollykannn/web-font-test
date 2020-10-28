@@ -31,7 +31,7 @@ module.exports = {
     manifestOptions: {
       name: '字體測試',
       hort_name: '字體測試',
-      start_url: ".",
+      start_url: "index.html",
       display: 'standalone',
       theme_color: '#545454'
     },
