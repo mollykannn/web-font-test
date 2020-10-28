@@ -3,16 +3,12 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 module.exports = {
   productionSourceMap: false,
   runtimeCompiler: true,
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/web-font-test/'
-    : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/web-font-test/' : '/',
   chainWebpack: config => {
-    config
-      .plugin('html')
-      .tap(args => {
-        args[0].title = '字體測試'
-        return args
-      })
+    config.plugin('html').tap(args => {
+      args[0].title = '字體測試'
+      return args
+    })
   },
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
@@ -28,25 +24,24 @@ module.exports = {
   },
   pwa: {
     name: '字體測試',
-    themeColor: '#000000',
-    msTileColor: '#000000',
+    themeColor: '#545454',
+    msTileColor: '#545454',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions: {
       name: '字體測試',
       hort_name: '字體測試',
-      start_url: '.',
+      start_url: ".",
       display: 'standalone',
-      theme_color: '#000000'
+      theme_color: '#545454'
     },
     iconPaths: {
-      favicon32: 'img/icons/favicon-32x32.png',
-      favicon16: 'img/icons/favicon-16x16.png',
-      appleTouchIcon: 'img/icons/apple-touch-icon.png',
-      msTileImage: 'img/icons/msapplication-icon-144x144.png',
-      'mask-icon': null
+      maskIcon: null
     },
-    iconPaths: null
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: 'src/service-worker.js'
+    }
   },
   devServer: {
     open: true,
