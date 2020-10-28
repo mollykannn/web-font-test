@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-font-test/js/chunk-vendors.8e39fcc1.js"
   },
   {
-    "revision": "bb097203e8804555a7896ebfb4a51420",
+    "revision": "6b22b0067f56a827d526e7ba908be443",
     "url": "/web-font-test/manifest.json"
   },
   {
