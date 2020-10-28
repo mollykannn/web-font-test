@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-font-test/css/app.3cdeed9a.css"
   },
   {
-    "revision": "c5b43b8cc1db8eef10077927dec080ed",
+    "revision": "f0d7ae41603857848313ca0ea7f92e53",
     "url": "/web-font-test/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-font-test/js/chunk-vendors.8e39fcc1.js"
   },
   {
-    "revision": "204bfeb33c505f02ee0476b3ea6e1cde",
+    "revision": "6de4f28d28af42116205523859bf81f5",
     "url": "/web-font-test/manifest.json"
   },
   {
