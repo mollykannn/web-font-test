@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "adb7016d5b6e3aca053d",
-    "url": "/web-font-test/css/app.3cdeed9a.css"
+    "revision": "354b86cc931f4c9365e5",
+    "url": "/web-font-test/css/app.77569304.css"
   },
   {
-    "revision": "1ba9e8105b6231072070447d3d42662f",
+    "revision": "720f750f022790f55b98ad77d145a04f",
     "url": "/web-font-test/index.html"
   },
   {
-    "revision": "adb7016d5b6e3aca053d",
+    "revision": "354b86cc931f4c9365e5",
     "url": "/web-font-test/js/app.840e6601.js"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-font-test/js/chunk-vendors.8e39fcc1.js"
   },
   {
-    "revision": "b99c21b3f4dfeca7f6324aa58fd95d6a",
+    "revision": "bb097203e8804555a7896ebfb4a51420",
     "url": "/web-font-test/manifest.json"
   },
   {
