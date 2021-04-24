@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "354b86cc931f4c9365e5",
+    "revision": "fc895384f6cdde4a75c0",
     "url": "/web-font-test/css/app.77569304.css"
   },
   {
-    "revision": "720f750f022790f55b98ad77d145a04f",
+    "revision": "cbab09a9ad14cfaa04a8814ff97d5a86",
     "url": "/web-font-test/index.html"
   },
   {
-    "revision": "354b86cc931f4c9365e5",
-    "url": "/web-font-test/js/app.840e6601.js"
+    "revision": "fc895384f6cdde4a75c0",
+    "url": "/web-font-test/js/app.c370139a.js"
   },
   {
-    "revision": "784f476a71e528c28ee7",
-    "url": "/web-font-test/js/chunk-vendors.8e39fcc1.js"
+    "revision": "21cbdda267fd201e41f6",
+    "url": "/web-font-test/js/chunk-vendors.0031b025.js"
   },
   {
     "revision": "6b22b0067f56a827d526e7ba908be443",
