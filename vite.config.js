@@ -18,7 +18,6 @@ export default defineConfig({
       srcDir: 'src',
       filename: 'sw.js',
       base: '/web-font-test/',
-      start_url: './index.html',
       registerType: process.env.CLAIMS === 'true' ? 'autoUpdate' : undefined,
       strategies: 'injectManifest',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
@@ -27,6 +26,7 @@ export default defineConfig({
         short_name: '字體測試',
         description: '字體測試',
         theme_color: '#545454',
+        start_url: './index.html',
         icons: [
           {
             src: 'img/icons/android-chrome-192x192.png',
