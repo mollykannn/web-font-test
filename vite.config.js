@@ -26,6 +26,7 @@ export default defineConfig({
         short_name: '字體測試',
         description: '字體測試',
         theme_color: '#545454',
+        scope: '.',
         start_url: './index.html',
         icons: [
           {
