@@ -18,6 +18,8 @@ export default defineConfig({
       srcDir: 'src',
       filename: 'sw.js',
       base: '/web-font-test/',
+      registerType: process.env.CLAIMS === 'true' ? 'autoUpdate' : undefined,
+      strategies: 'injectManifest',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: '字體測試',
@@ -48,8 +50,7 @@ export default defineConfig({
             purpose: 'maskable'
           }
         ]
-      },
-      strategies: 'injectManifest'
+      }
     }),
     eslintPlugin({
       include: ['src/**/*.vue', 'src/**/*.js']
