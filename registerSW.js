@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/web-font-test/sw.js', { scope: '/web-font-test/' })})}
