@@ -17,7 +17,7 @@ export default defineConfig({
       mode: 'development',
       srcDir: 'src',
       filename: 'sw.js',
-      base: '/web-font-test',
+      base: '/web-font-test/',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: '字體測試',
@@ -26,23 +26,23 @@ export default defineConfig({
         theme_color: '#545454',
         icons: [
           {
-            src: '/web-font-test/img/icons/android-chrome-192x192.png',
+            src: 'img/icons/android-chrome-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/web-font-test/img/icons/android-chrome-512x512.png',
+            src: 'img/icons/android-chrome-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: '/web-font-test/img/icons/android-chrome-maskable-192x192.png',
+            src: 'img/icons/android-chrome-maskable-192x192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'maskable'
           },
           {
-            src: '/web-font-test/img/icons/android-chrome-maskable-512x512.png',
+            src: 'img/icons/android-chrome-maskable-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
