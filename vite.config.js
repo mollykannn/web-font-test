@@ -18,6 +18,7 @@ export default defineConfig({
       srcDir: 'src',
       filename: 'sw.js',
       base: '/web-font-test/',
+      start_url: './index.html',
       registerType: process.env.CLAIMS === 'true' ? 'autoUpdate' : undefined,
       strategies: 'injectManifest',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
