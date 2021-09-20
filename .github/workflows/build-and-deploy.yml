@@ -5,7 +5,7 @@ on:
     types:
       - completed
     workflows:
-      - 'Auto approve'
+      - 'Auto Merge'
   push:
     branches:
       - master
