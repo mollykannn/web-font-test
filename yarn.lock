@@ -4255,7 +4255,7 @@ workbox-cacheable-response@6.3.0:
   dependencies:
     workbox-core "6.3.0"
 
-workbox-core@6.3.0, workbox-core@^6.3.0:
+workbox-core@6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-6.3.0.tgz#a7d82bae6f623f342e04028a0a2cef39af71af55"
   integrity sha512-SufToEV3SOLwwz3j+P4pgkfpzLRUlR17sX3p/LrMHP/brYKvJQqjTwtSvaCkkAX0RPHX2TFHmN8xhPP1bpmomg==
