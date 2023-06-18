@@ -12,7 +12,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@amatlash/vite-plugin-stylelint": "^1.1.1",
+    "@amatlash/vite-plugin-stylelint": "^1.2.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/compiler-sfc": "^3.3.4",
     "babel-eslint": "^10.1.0",
