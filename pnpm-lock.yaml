@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^9.22.0
     version: 9.22.0(eslint@8.56.0)
   sass:
-    specifier: ^1.71.0
-    version: 1.71.0
+    specifier: ^1.71.1
+    version: 1.71.1
   stylelint:
     specifier: ^15.11.0
     version: 15.11.0
@@ -51,7 +51,7 @@ devDependencies:
     version: 5.3.2(stylelint@15.11.0)
   vite:
     specifier: ^5.1.4
-    version: 5.1.4(sass@1.71.0)
+    version: 5.1.4(sass@1.71.1)
   vite-plugin-eslint:
     specifier: ^1.8.1
     version: 1.8.1(eslint@8.56.0)(vite@5.1.4)
@@ -78,7 +78,7 @@ packages:
       '@rollup/pluginutils': 4.2.1
       rollup: 2.79.1
       stylelint: 14.16.1
-      vite: 5.1.4(sass@1.71.0)
+      vite: 5.1.4(sass@1.71.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1828,7 +1828,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.1.4(sass@1.71.0)
+      vite: 5.1.4(sass@1.71.1)
       vue: 3.4.19
     dev: true
 
@@ -3959,8 +3959,8 @@ packages:
       is-regex: 1.1.4
     dev: true
 
-  /sass@1.71.0:
-    resolution: {integrity: sha512-HKKIKf49Vkxlrav3F/w6qRuPcmImGVbIXJ2I3Kg0VMA+3Bav+8yE9G5XmP5lMj6nl4OlqbPftGAscNaNu28b8w==}
+  /sass@1.71.1:
+    resolution: {integrity: sha512-wovtnV2PxzteLlfNzbgm1tFXPLoZILYAMJtvoXXkD7/+1uP41eKkIt1ypWq5/q2uT94qHjXehEYfmjKOvjL9sg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4576,7 +4576,7 @@ packages:
       '@types/eslint': 8.40.2
       eslint: 8.56.0
       rollup: 2.79.1
-      vite: 5.1.4(sass@1.71.0)
+      vite: 5.1.4(sass@1.71.1)
     dev: true
 
   /vite-plugin-pwa@0.19.0(vite@5.1.4)(workbox-build@7.0.0)(workbox-window@7.0.0):
@@ -4594,14 +4594,14 @@ packages:
       debug: 4.3.4
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
-      vite: 5.1.4(sass@1.71.0)
+      vite: 5.1.4(sass@1.71.1)
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@5.1.4(sass@1.71.0):
+  /vite@5.1.4(sass@1.71.1):
     resolution: {integrity: sha512-n+MPqzq+d9nMVTKyewqw6kSt+R3CkvF9QAKY8obiQn8g1fwTscKxyfaYnC632HtBXAQGc1Yjomphwn1dtwGAHg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4632,7 +4632,7 @@ packages:
       esbuild: 0.19.7
       postcss: 8.4.35
       rollup: 4.5.2
-      sass: 1.71.0
+      sass: 1.71.1
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
