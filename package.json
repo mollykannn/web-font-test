@@ -26,7 +26,7 @@
     "stylelint-scss": "^5.3.2",
     "vite": "^5.2.7",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-pwa": "^0.19.7",
+    "vite-plugin-pwa": "^0.19.8",
     "workbox-window": "^7.0.0"
   }
 }
