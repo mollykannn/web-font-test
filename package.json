@@ -17,7 +17,7 @@
     "@vue/compiler-sfc": "^3.4.27",
     "babel-eslint": "^10.1.0",
     "eslint": "^9.2.0",
-    "eslint-plugin-vue": "^9.25.0",
+    "eslint-plugin-vue": "^9.26.0",
     "sass": "^1.77.1",
     "stylelint": "^15.11.0",
     "stylelint-config-property-sort-order-smacss": "^10.0.0",
