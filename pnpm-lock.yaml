@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       core-js:
-        specifier: ^3.38.0
-        version: 3.38.0
+        specifier: ^3.38.1
+        version: 3.38.1
       vue:
         specifier: ^3.4.38
         version: 3.4.38
@@ -1295,8 +1295,8 @@ packages:
   core-js-compat@3.18.1:
     resolution: {integrity: sha512-XJMYx58zo4W0kLPmIingVZA10+7TuKrMLPt83+EzDmxFJQUMcTVVmQ+n5JP4r6Z14qSzhQBRi3NSWoeVyKKXUg==}
 
-  core-js@3.38.0:
-    resolution: {integrity: sha512-XPpwqEodRljce9KswjZShh95qJ1URisBeKCjUdq27YdenkslVe7OO0ZJhlYXAChW7OhXaRLl8AAba7IBfoIHug==}
+  core-js@3.38.1:
+    resolution: {integrity: sha512-OP35aUorbU3Zvlx7pjsFdu1rGNnD4pgw/CWoYzRY3t2EzoVT7shKHY1dlAy3f41cGIO7ZDPQimhGFTlEYkG/Hw==}
 
   cosmiconfig@7.1.0:
     resolution: {integrity: sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==}
@@ -4100,7 +4100,7 @@ snapshots:
       browserslist: 4.23.0
       semver: 7.0.0
 
-  core-js@3.38.0: {}
+  core-js@3.38.1: {}
 
   cosmiconfig@7.1.0:
     dependencies:
